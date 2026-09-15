@@ -349,7 +349,9 @@ footer a {
     }
 
     nav ul {
-        gap: 8px;
+        flex-direction: column;
+        align-items: stretch;
+        gap: 4px;
         margin-top: 16px;
     }
 
@@ -364,6 +366,16 @@ footer a {
         margin: 24px auto;
         padding: 24px 16px;
         border-radius: 8px;
+        text-align: left;
+    }
+
+    article > .photodemoi,
+    article > .citation,
+    .presentation-bloc,
+    .titre-section,
+    .contact-centre,
+    .bloc-centre {
+        text-align: center;
     }
 
     h2 {
