@@ -1,4 +1,12 @@
 /*1. RÈGLES GÉNÉRALES  */
+*, *::before, *::after {
+    box-sizing: border-box;
+}
+
+html {
+    overflow-x: hidden;
+}
+
 body {
     font-family: 'Arial', sans-serif;
     margin: 0;
@@ -7,6 +15,7 @@ body {
     color: #333; 
     line-height: 1.6;
     text-align: center;
+    overflow-wrap: anywhere;
 }
 
 /* 2. EN-TÊTE ET TITRE */
@@ -21,15 +30,17 @@ h1 {
     margin: 0;
     text-transform: uppercase;
     letter-spacing: 2px;
+    padding: 0 16px;
 }
 
 /*   3. MENU DE NAVIGATION */
 nav ul {
     list-style-type: none; 
     padding: 0;
-    margin-top: 20px;
+    margin: 20px 16px 0;
     display: flex; 
     justify-content: center;
+    flex-wrap: wrap;
     gap: 30px;
 }
 
@@ -51,7 +62,7 @@ nav a:hover, .onglet-actif {
 /* 4. STRUCTURE PRINCIPALE */
 article {
     background-color: white;
-    width: 80%;
+    width: calc(100% - 32px);
     max-width: 800px;
     margin: 40px auto; 
     padding: 40px;
@@ -88,6 +99,7 @@ article {
     border-left: 4px solid #3498db;
     display: inline-block;
     padding-left: 10px;
+    max-width: 100%;
 }
 
 .presentation-bloc span {
@@ -149,6 +161,7 @@ article {
     padding: 20px;
     text-align: left;
     margin-bottom: 30px;
+    overflow-wrap: anywhere;
 }
 
 .carte-projet h3 {
@@ -205,7 +218,7 @@ article {
 
 .colonne-code {
     flex: 1;
-    min-width: 300px;
+    min-width: 0;
 }
 
 .image-code {
@@ -223,6 +236,8 @@ article {
     text-align: left;
     font-family: monospace;
     font-size: 14px;
+    white-space: pre-wrap;
+    overflow-wrap: anywhere;
 }
 
 .liste-materiel, .liste-sysml {
@@ -314,6 +329,7 @@ footer a {
     margin: 0 15px;
     font-size: 16px;
     vertical-align: middle;
+    overflow-wrap: anywhere;
 }
 
 .icone-footer {
@@ -323,21 +339,129 @@ footer a {
 
 /* Règles pour les téléphones (écrans de moins de 768px de large) */
 @media (max-width: 768px) {
-  /* Exemple : mettre les éléments les uns sous les autres au lieu de côte à côte */
-  .mon-conteneur {
-    flex-direction: column;
-    width: 100%;
-  }
-  
-  /* Exemple : réduire un peu la taille du texte */
-  h1 {
-    font-size: 24px;
-  }
-  
-  /* Exemple : cacher certains éléments non essentiels sur mobile */
-  .element-a-cacher {
-    display: none;
-  }
+    header {
+        padding: 16px 0;
+    }
+
+    h1 {
+        font-size: 24px;
+        line-height: 1.25;
+    }
+
+    nav ul {
+        gap: 8px;
+        margin-top: 16px;
+    }
+
+    nav a {
+        display: block;
+        font-size: 16px;
+        padding: 8px 10px;
+    }
+
+    article {
+        width: calc(100% - 24px);
+        margin: 24px auto;
+        padding: 24px 16px;
+        border-radius: 8px;
+    }
+
+    h2 {
+        font-size: 24px;
+        line-height: 1.3;
+    }
+
+    .bloc-contenu h3,
+    .bloc-competence h3,
+    .carte-projet h3 {
+        font-size: 19px;
+        line-height: 1.35;
+    }
+
+    .photodemoi {
+        width: min(200px, 70vw);
+        height: auto;
+        aspect-ratio: 1;
+    }
+
+    .citation {
+        font-size: 17px;
+        text-align: left;
+    }
+
+    .ligne-bonjour {
+        font-size: 21px;
+    }
+
+    .ligne-nom {
+        font-size: 25px;
+    }
+
+    .ligne-statut {
+        font-size: 16px;
+    }
+
+    .conteneur-badges {
+        gap: 10px;
+    }
+
+    .badge-qualite {
+        max-width: 100%;
+    }
+
+    .carte-projet {
+        padding: 16px;
+    }
+
+    .media-video,
+    .image-large,
+    .image-code {
+        max-width: 100%;
+        height: auto;
+    }
+
+    .conteneur-code {
+        display: block;
+    }
+
+    .colonne-code + .colonne-code {
+        margin-top: 16px;
+    }
+
+    .bloc-code {
+        font-size: 12px;
+        padding: 12px;
+    }
+
+    .liste-materiel,
+    .liste-sysml,
+    .bloc-competence ul {
+        padding-left: 22px;
+    }
+
+    .lien-mail-gros {
+        display: inline-block;
+        font-size: 17px;
+    }
+
+    .lien-reseau {
+        font-size: 16px;
+    }
+
+    .bouton-telechargement,
+    .bouton-projet {
+        max-width: 100%;
+        padding: 11px 16px;
+    }
+
+    footer {
+        padding: 24px 16px;
+    }
+
+    footer a {
+        display: block;
+        margin: 8px 0;
+    }
 }
 
 
