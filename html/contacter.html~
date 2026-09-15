@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <title>Contact - Portfolio de Kylian</title>
+    <link rel="stylesheet" type="text/css" href="../css/style.css">
+</head>
+<body>
+
+    <header>
+        <div><h1>PREBOST KYLIAN</h1></div>
+        <nav>
+            <ul>
+                <li><a id="accueil" href="../index.html">Accueil</a></li>
+                <li><a id="info" href="quisuisje.html">Qui suis-je?</a></li>
+                <li><a id="projets" href="projets.html">Projets</a></li>
+                <li><a id="competences" href="competences.html">Compétences</a></li>
+                <li><a id="contact" href="contacter.html">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <article>
+        <div class="titre-section">
+            <h2>Me Contacter</h2>
+            <p>Une question ou une proposition de stage ? N'hésitez pas à m'écrire !</p>
+        </div>
+
+        <div class="bloc-contenu" style="text-align: center;">
+            
+            <div style="margin-bottom: 30px;">
+                <h3 style="border: none; text-align: center;">📧 Par Email</h3>
+                <a href="mailto:kylianprebost075@gmail.com" style="font-size: 20px; font-weight: bold; color: #3498db; text-decoration: none;">
+                    kylianprebost075@gmail.com
+                </a>
+            </div>
+
+            <div style="margin-bottom: 30px;">
+                <h3 style="border: none; text-align: center;">👔 Sur LinkedIn</h3>
+                <a href="https://www.linkedin.com/in/kylian-prebost-32213239b/" target="_blank" style="font-size: 18px; color: #2c3e50; text-decoration: none;">
+                    <img src="../images/linkedin2.png" alt="Logo LinkedIn" style="width:40px; vertical-align: middle; margin-right: 10px;">
+                    Voir mon profil
+                </a>
+            </div>
+
+            <div style="margin-bottom: 40px;">
+                <h3 style="border: none; text-align: center;">🐙 Mon GitHub</h3>
+                <a href="https://github.com/kylianprebost075-maker" target="_blank" style="font-size: 18px; color: #2c3e50; text-decoration: none;">
+                    <img src="../images/github.png" alt="Logo GitHub" style="width:40px; vertical-align: middle; margin-right: 10px;">
+                    Voir mes projets de code
+                </a>
+            </div>
+
+            <hr style="border: 0; border-top: 1px solid #eee; margin: 30px 0;">
+
+            <div class="zone-cv">
+                <h3>Mon CV</h3>
+                <p style="margin-bottom: 20px;">Dispo en PDF juste ici :</p>
+                <a href="../images/cv.pdf" class="bouton-telechargement" download="../CV_Kylian.pdf" target="_blank">
+                    📄 Télécharger mon CV
+                </a>
+            </div>
+
+        </div>
+    </article>
+
+    <footer>
+        <span>Me contacter : </span>
+        <a href="mailto:kylianprebost075@gmail.com">kylianprebost075@gmail.com</a>
+        <a href="https://www.linkedin.com/in/kylian-prebost-32213239b/" target="_blank">
+            <img src="../images/linkedin2.png" alt="Logo LinkedIn" style="width:30px; vertical-align:middle;">
+        </a>
+    </footer>
+
+</body>
+</html>

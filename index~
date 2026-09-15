@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Portefollio-de-kylian </title>
+   <link rel="stylesheet" type="text/css" href="css/style.css">
+    </head>
+<body>
+
+    <header>
+    <div>
+        <h1>PREBOST kylian</h1>
+     </div>
+        		<nav>
+        				<ul>
+        					<li><a id="Accueil" href="index">Accueil</a></li>
+   							<li><a id="infomation " href="quisuisje.html">Qui suis-je?</a></li>
+							<li><a id ="projets"href="projets.html">Projets</a></li>     	
+							<li><a id ="Compétences"href="Competences.html">Compétences</a></li> 			
+        				</ul>        
+      		 </nav>
+    </header>
+    
+  <article>    
+    <img class="photodemoi" alt="photo de moi" src="images/photodemoi.jpeg"/>
+    <p>L'informatique n'est pas qu'une question de machines, c'est une question de communication.</p>
+    <p>BONJOUR et bienvenue !</p>
+    <p>je m'appelle</p>
+    <p>kylian PREBOST</p>
+    <p>je suis </p>
+    <p>étudiant en 1ère année de BUT Réseaux et Télécommunications à Châtellerault </p>
+    <p>Bienvenue sur mon portfolio. Ce site présente mes           |
+|   compétences en réseaux, télécoms et développement web.</p>
+    
+    </article>
+    <footer>
+    <a>contact:</a>
+    <a href="mailto:kylianprebost075@gmail.com">kylianprebost075@gmail.com</a>
+    <a href="https://www.linkedin.com/in/kylian-prebost-32213239b/" title="logo linkedin"><img src="images/linkedin2.png" alt="linkedin" /></a>
+    </footer>
+    
+
+</body>
+</html>

@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <title>Projet Tracker Solaire - Portfolio de Kylian</title>
+    <link rel="stylesheet" type="text/css" href="../css/style.css">
+</head>
+<body>
+
+    <header>
+        <div><h1>PREBOST KYLIAN</h1></div>
+        <nav>
+            <ul>
+                <li><a id="accueil" href="../index.html">Accueil</a></li>
+                <li><a id="info" href="../quisuisje.html">Qui suis-je?</a></li>
+                <li><a id="projets" class="onglet-actif" href="../projets.html">Projets</a></li>
+                <li><a id="competences" href="../competences.html">Compétences</a></li>
+                <li><a id="contact" href="../contacter.html">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <article>
+        <a href="projets.html" class="lien-retour">⬅ Retour aux projets</a>
+
+        <div class="titre-section">
+            <h2>Tracker Solaire Automatisé</h2>
+            <p>Projet Technique STI2D (SIN)</p>
+        </div>
+
+        <div class="bloc-contenu">
+            <h3>Le défi technique</h3>
+            <p>
+                Un panneau solaire fixe perd de l'efficacité quand le soleil bouge. 
+                Mon objectif : Créer un système autonome capable de suivre la lumière pour augmenter le rendement électrique de 30 à 40%.
+            </p>
+            <p>
+                Le principe : Quatre capteurs de luminosité (LDR) détectent la position du soleil. Une carte Arduino analyse ces données et pilote deux moteurs pour orienter le panneau pile en face des rayons.
+            </p>
+        </div>
+
+        <div class="bloc-contenu bloc-centre">
+            <h3>Démonstration en vidéo</h3>
+            <p>Voici le prototype en action :</p>
+            <video class="media-video" controls>
+                <source src="../images/demo_tracker.mp4" type="video/mp4">
+                Votre navigateur ne supporte pas la lecture de vidéos.
+            </video>
+        </div>
+
+        <div class="bloc-contenu">
+            <h3>Conception Électronique</h3>
+            <p>
+                Le système utilise un Pont en H (L293D) pour contrôler le sens de rotation des deux moteurs (Axe Horizontal et Vertical).
+            </p>
+            <img src="../images/schema_tinkercad.jpg" alt="Schéma de câblage Arduino" class="image-large">
+            
+            <ul class="liste-materiel">
+                <li>Cerveau : Carte Arduino Uno</li>
+                <li>Yeux : 4 Photorésistances (LDR)</li>
+                <li>Muscles : 2 Moteurs pilotés par L293D</li>
+            </ul>
+        </div>
+
+        <div class="bloc-contenu">
+            <h3>L'Algorithme (C++ / Arduino)</h3>
+            <p>
+                Le programme compare la luminosité reçue à gauche et à droite. Si la différence dépasse un <code>seuil</code>, le moteur s'active.
+            </p>
+
+            <div class="conteneur-code">
+                <div class="colonne-code">
+                    <img src="../images/code_arduino.jpg" alt="Extrait du code C++" class="image-code">
+                </div>
+                <div class="colonne-code">
+                    <pre class="bloc-code">
+// Logique simplifiée :
+int diffH = gauche - droite;
+
+if (diffH > seuil) {
+    // Plus de lumière à gauche
+    tournerVersLaGauche();
+} 
+else if (diffH < -seuil) {
+    // Plus de lumière à droite
+    tournerVersLaDroite();
+}
+                    </pre>
+                </div>
+            </div>
+        </div>
+
+        <div class="bloc-contenu">
+            <h3>Analyse du système (SysML)</h3>
+            <p>Structure des chaînes fonctionnelles :</p>
+            <ul class="liste-sysml">
+                <li>Chaîne d'information : Acquérir (LDR) ➔ Traiter (Arduino) ➔ Communiquer.</li>
+                <li>Chaîne d'énergie : Alimenter ➔ Moduler (L293D) ➔ Convertir (Moteurs) ➔ Agir.</li>
+            </ul>
+        </div>
+
+    </article>
+
+    <footer>
+        <span>Me contacter : </span>
+        <a href="mailto:kylianprebost075@gmail.com">kylianprebost075@gmail.com</a>
+        <a href="https://www.linkedin.com/in/kylian-prebost-32213239b/" target="_blank">
+            <img src="../images/linkedin2.png" alt="Logo LinkedIn" class="icone-footer">
+        </a>
+    </footer>
+
+</body>
+</html>

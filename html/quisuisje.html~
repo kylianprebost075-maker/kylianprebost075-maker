@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <title>Qui suis-je ? - Portfolio de Kylian</title>
+    <link rel="stylesheet" type="text/css" href="../css/style.css">
+</head>
+<body>
+
+    <header>
+        <div><h1>PREBOST KYLIAN</h1></div>
+        <nav>
+            <ul>
+                <li><a id="accueil" href="../index.html">Accueil</a></li>
+                <li><a id="info" href="quisuisje.html">Qui suis-je?</a></li>
+                <li><a id="projets" href="projets.html">Projets</a></li>
+                <li><a id="competences" href="competences.html">Compétences</a></li>
+                <li><a id="contact" href="contacter.html">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <article>
+        <div class="titre-section">
+            <h2>À propos de moi</h2>
+        </div>
+
+        <div class="bloc-contenu">
+            <h3>Qui suis-je ?</h3>
+            <p>
+                Je suis quelqu'un de **déterminé**. Quand je me fixe un objectif, je fais tout pour l'atteindre, comme pour mon permis que j'ai eu dès mes 17 ans. En cours, j'apprends surtout la **rigueur** et le travail en **équipe**, car en informatique, on ne réussit jamais seul.
+            </p>
+            
+            <div style="display: flex; justify-content: space-around; flex-wrap: wrap; gap: 15px; margin-top: 20px;">
+                <span class="badge-qualite">Détermination</span>
+                <span class="badge-qualite">Logique</span>
+                <span class="badge-qualite">Résistance au stress</span>
+                <span class="badge-qualite">Rigueur</span>
+            </div>
+        </div>
+
+        <div class="bloc-contenu">
+            <h3>Mon bilan</h3>
+            <p>
+                <span class="texte-gras">Ce que je pense :</span><br>
+                Pour moi, la technique doit être impeccable. Je ne veux pas juste appliquer des procédures, je veux comprendre **pourquoi** ça marche (ou pourquoi ça plante) pour être vraiment efficace.
+            </p>
+            <p>
+                <span class="texte-gras">Mes échecs et progrès :</span><br>
+                Le VTT en compétition m'a appris à ne rien lâcher (**Résilience**). Quand je rate une course, je cherche à comprendre pourquoi au lieu de m'énerver. Je fais pareil en informatique : chaque erreur de code ou de configuration est une leçon pour m'améliorer.
+            </p>
+            <p>
+                <span class="texte-gras">Comment on me voit :</span><br>
+                On dit souvent de moi que je suis **fiable** et **calme**. C'est important pour devenir administrateur réseaux, car il faut savoir garder son sang-froid quand il y a un problème technique urgent.
+            </p>
+        </div>
+        
+        <div class="bloc-contenu">
+            <h3>Ce qui me passionne</h3>
+            <p>
+                Je fais beaucoup de VTT et de course à pied en compétition. J'aime le **challenge** et me dépasser. C'est aussi mon meilleur moyen d'évacuer le stress pour être bien concentré en cours.
+            </p>
+        </div>
+
+        <div class="bloc-contenu">
+            <h3>Mon ambition</h3>
+            <p>
+                Pour moi, réussir ma vie pro, c'est devenir un **expert**. Je ne veux pas rester en surface, je veux être "celui qu'on appelle" quand la panne est compliquée et qu'il faut trouver une solution solide.
+            </p>
+        </div>
+    </article>
+
+    <footer>
+        <span>Me contacter : </span>
+        <a href="mailto:kylianprebost075@gmail.com">kylianprebost075@gmail.com</a>
+        <a href="https://www.linkedin.com/in/kylian-prebost-32213239b/" target="_blank">
+            <img src="../images/linkedin2.png" alt="Logo LinkedIn" style="width:30px; vertical-align:middle;">
+        </a>
+    </footer>
+
+</body>
+</html>

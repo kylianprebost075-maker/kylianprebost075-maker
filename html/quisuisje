@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Qui suis-je ? - Portfolio de Kylian</title>
+    <link rel="stylesheet" type="text/css" href="../css/style.css">
+</head>
+<body>
+
+    <header>
+        <div>
+            <h1>PREBOST kylian</h1>
+        </div>
+        <nav>
+            <ul>
+                <li><a id="accueil" href="../index.html">Accueil</a></li>
+                <li><a id="info" href="quisuisje.html">Qui suis-je?</a></li>
+                <li><a id="projets" href="projets.html">Projets</a></li>
+                <li><a id="competences" href="competences.html">Compétences</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <article>
+        <div class="titre-section">
+            <h2>À propos de moi</h2>
+        </div>
+
+        <div class="bloc-contenu">
+            <h3>Ma personnalité</h3>
+            <p>
+                Naturellement curieux et autonome, j'aime comprendre comment fonctionnent les choses qui m'entourent. 
+                L'obtention de mon permis de conduire dès mes 17 ans témoigne de ma capacité à me fixer des objectifs 
+                et à m'investir pour les atteindre. En formation R&T, je développe particulièrement mon esprit d'équipe 
+                et ma rigueur technique.
+            </p>
+        </div>
+
+        <div class="bloc-contenu">
+            <h3>Ce qui me passionne</h3>
+            <p>
+                L'informatique est bien sûr au cœur de mes intérêts, notamment le montage de PC et la configuration système.
+                En dehors des écrans, je pratique [AJOUTE TON SPORT OU LOISIR ICI], ce qui m'apprend la persévérance 
+                et la gestion du stress, des qualités que je réinvestis dans mes études.
+            </p>
+        </div>
+
+        <div class="bloc-contenu">
+            <h3>Mon ambition professionnelle</h3>
+            <p>
+                Mon objectif est de devenir administrateur réseaux pour garantir la sécurité et la fluidité des échanges numériques. 
+                Je souhaite allier mes compétences techniques à mon sens du service pour apporter des solutions concrètes aux entreprises.
+            </p>
+        </div>
+    </article>
+
+    <footer>
+        <span>Me contacter : </span>
+        <a href="mailto:kylianprebost075@gmail.com">kylianprebost075@gmail.com</a>
+        <a href="https://www.linkedin.com/in/kylian-prebost-32213239b/" target="_blank" title="Mon profil LinkedIn">
+            <img src="../images/linkedin2.png" alt="Logo LinkedIn" style="width:30px; vertical-align:middle;">
+        </a>
+    </footer>
+
+</body>
+</html>

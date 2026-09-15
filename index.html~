@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <title>Portfolio de Kylian</title>
+    <link rel="stylesheet" type="text/css" href="css/style.css">
+</head>
+<body>
+
+    <header>
+        <div>
+            <h1>PREBOST KYLIAN</h1>
+        </div>
+        <nav>
+            <ul>
+                <li><a id="accueil" href="index.html">Accueil</a></li>
+                <li><a id="info" href="html/quisuisje.html">Qui suis-je?</a></li>
+                <li><a id="projets" href="html/projets.html">Projets</a></li>
+                <li><a id="competences" href="html/competences.html">Compétences</a></li>
+                <li><a id="contact" href="html/contacter.html">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <article>
+        <img class="photodemoi" alt="Photo de moi" src="images/photodemoi.jpeg"/>
+        
+        <p class="citation">"L'informatique n'est pas qu'une question de machines, c'est une question de communication."</p>
+
+        <div class="presentation-bloc">
+            <span class="ligne-bonjour">BIENVENUE !</span>
+            <span class="ligne-intro">Moi c'est</span>
+            <span class="ligne-nom">Kylian PREBOST</span>
+            <span class="ligne-intro">Actuellement</span>
+            <span class="ligne-statut">Étudiant en BUT R&T (Réseaux & Télécoms) à Châtellerault</span>
+        </div>
+
+        <p class="description-site">
+            Ce site, c'est ma carte de visite. Vous y trouverez mes projets scolaires, mes compétences techniques et mon parcours. Pas de blabla, juste du concret. Bonne visite !
+        </p>
+    </article>
+
+    <footer>
+        <span>Me contacter : </span>
+        <a href="mailto:kylianprebost075@gmail.com">kylianprebost075@gmail.com</a>
+        <a href="https://www.linkedin.com/in/kylian-prebost-32213239b/" target="_blank">
+            <img src="images/linkedin2.png" alt="Logo LinkedIn" style="width:30px; vertical-align:middle;">
+        </a>
+    </footer>
+
+</body>
+</html>

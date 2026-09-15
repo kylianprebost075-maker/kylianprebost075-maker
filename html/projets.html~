@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <title>Projets - Portfolio de Kylian</title>
+    <link rel="stylesheet" type="text/css" href="../css/style.css">
+</head>
+<body>
+
+    <header>
+        <div><h1>PREBOST KYLIAN</h1></div>
+        <nav>
+            <ul>
+                <li><a id="accueil" href="../index.html">Accueil</a></li>
+                <li><a id="info" href="quisuisje.html">Qui suis-je?</a></li>
+                <li><a id="projets" class="onglet-actif" href="projets.html">Projets</a></li>
+                <li><a id="competences" href="competences.html">Compétences</a></li>
+                <li><a id="contact" href="contacter.html">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <article>
+        <div class="titre-section">
+            <h2>Mes Réalisations</h2>
+            <p>Voici une sélection de projets techniques réalisés durant ma formation.</p>
+        </div>
+
+        <div class="carte-projet">
+            <h3>Projet 1 : Conception de mon Portfolio Numérique</h3>
+            <p><span class="texte-gras">Cadre :</span> SAE 1.04 "Se présenter sur Internet" (BUT 1)</p>
+            <p><span class="texte-gras">Objectif :</span> Réaliser un site web personnel pour présenter mes compétences et mon identité numérique professionnelle.</p>
+            <p><span class="texte-gras">Réalisation :</span> Développement complet en HTML5 et CSS3 sans utilisation de framework. Mise en place d'une structure sémantique et d'une feuille de style personnalisée.</p>
+            <p><span class="texte-gras">Compétences mobilisées :</span> Langages Web, Gestion de projet, Hébergement FTP.</p>
+        </div>
+
+        <div class="carte-projet">
+            <h3>Projet 2 : Automatisation d'un Panneau Photovoltaïque</h3>
+            <p><span class="texte-gras">Cadre :</span> Projet technique de Terminale</p>
+            <p><span class="texte-gras">Objectif :</span> Optimiser le rendement énergétique d'un panneau solaire en créant un système de suivi automatique de la lumière (Tracker Solaire).</p>
+            <p><span class="texte-gras">Réalisation :</span> Conception d'un système motorisé capable de pivoter sur deux axes. Programmation d'une carte électronique comparant les données de plusieurs capteurs de luminosité.</p>
+            
+            <div class="zone-bouton-projet">
+                <a href="../tracker.html" class="bouton-projet">
+                    👁️ Voir le dossier technique (Vidéo & Schémas)
+                </a>
+            </div>
+        </div>
+    </article>
+
+    <footer>
+        <span>Me contacter : </span>
+        <a href="mailto:kylianprebost075@gmail.com">kylianprebost075@gmail.com</a>
+        <a href="https://www.linkedin.com/in/kylian-prebost-32213239b/" target="_blank">
+            <img src="../images/linkedin2.png" alt="Logo LinkedIn" class="icone-footer">
+        </a>
+    </footer>
+
+</body>
+</html>
