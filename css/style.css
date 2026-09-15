@@ -321,6 +321,25 @@ footer a {
     vertical-align: middle;
 }
 
+/* Règles pour les téléphones (écrans de moins de 768px de large) */
+@media (max-width: 768px) {
+  /* Exemple : mettre les éléments les uns sous les autres au lieu de côte à côte */
+  .mon-conteneur {
+    flex-direction: column;
+    width: 100%;
+  }
+  
+  /* Exemple : réduire un peu la taille du texte */
+  h1 {
+    font-size: 24px;
+  }
+  
+  /* Exemple : cacher certains éléments non essentiels sur mobile */
+  .element-a-cacher {
+    display: none;
+  }
+}
+
 
 .bloc-centre { text-align: center; }
 .texte-gras { font-weight: bold; }
