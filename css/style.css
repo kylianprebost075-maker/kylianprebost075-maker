@@ -50,7 +50,11 @@ nav a {
     font-weight: bold;
     font-size: 18px;
     padding: 5px 15px;
-    transition: 0.3s; 
+    transition: all 0.3s ease-in-out;
+}
+
+a {
+    transition: all 0.3s ease-in-out;
 }
 
 /* Effet au survol */
@@ -250,7 +254,12 @@ article {
     text-align: center;
 }
 
-.bloc-contact-item {
+.contact-item {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 12px;
+    flex-wrap: wrap;
     margin-bottom: 30px;
 }
 
@@ -260,7 +269,7 @@ article {
     text-align: center !important; 
     padding-left: 0 !important; 
     color: #2c3e50;
-    margin-bottom: 10px;
+    margin: 0;
 }
 
 .lien-mail-gros {
@@ -268,6 +277,15 @@ article {
     font-weight: bold;
     color: #3498db;
     text-decoration: none;
+    overflow-wrap: anywhere;
+}
+
+.lien-mail-gros:hover,
+.lien-reseau:hover,
+footer a:hover {
+    color: #2c3e50;
+    text-decoration: underline;
+    text-underline-offset: 4px;
 }
 
 .lien-reseau {
@@ -283,6 +301,12 @@ article {
 .icone-reseau {
     width: 40px;
     vertical-align: middle;
+    transition: all 0.3s ease-in-out;
+}
+
+.lien-reseau:hover .icone-reseau,
+footer a:hover .icone-footer {
+    transform: scale(1.05);
 }
 
 .separateur {
@@ -300,7 +324,7 @@ article {
     border-radius: 30px;
     text-decoration: none;
     font-weight: bold;
-    transition: 0.3s;
+    transition: all 0.3s ease-in-out;
     margin-top: 10px;
 }
 
@@ -317,6 +341,10 @@ article {
 
 /* 10. PIED DE PAGE (FOOTER) */
 footer {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
     background-color: #333;
     color: white;
     padding: 30px 0;
@@ -335,6 +363,7 @@ footer a {
 .icone-footer {
     width: 30px;
     vertical-align: middle;
+    transition: all 0.3s ease-in-out;
 }
 
 /* Règles pour les téléphones (écrans de moins de 768px de large) */
@@ -454,6 +483,11 @@ footer a {
     .lien-mail-gros {
         display: inline-block;
         font-size: 17px;
+    }
+
+    .contact-item {
+        width: 100%;
+        gap: 12px;
     }
 
     .lien-reseau {
