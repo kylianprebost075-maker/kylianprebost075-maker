@@ -1,109 +1,283 @@
-/*1. RÈGLES GÉNÉRALES  */
+@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@500;600;700;800&family=Inter:wght@400;500;600&display=swap');
+
+/* ==========================================================================
+   PORTFOLIO — KYLIAN PREBOST
+   Thème sombre épuré • accent bleu électrique • glassmorphism
+   ========================================================================== */
+
+/* ---- Variables de design ---- */
+:root {
+    --bg-0: #05070f;
+    --bg-1: #0a1224;
+    --bg-2: #0d1b33;
+
+    --accent: #3b82f6;          /* bleu électrique */
+    --accent-2: #22d3ee;        /* cyan lumineux */
+    --accent-glow: rgba(59, 130, 246, 0.45);
+
+    --texte: #e6edf7;
+    --texte-fonce: #a9b6ca;
+    --texte-titre: #f8fafc;
+
+    --surface: rgba(255, 255, 255, 0.04);
+    --surface-hover: rgba(255, 255, 255, 0.07);
+    --bordure: rgba(255, 255, 255, 0.09);
+
+    --rayon: 18px;
+    --ombre: 0 24px 48px -24px rgba(0, 0, 0, 0.65);
+
+    --police-titres: 'Outfit', 'Poppins', sans-serif;
+    --police-texte: 'Inter', 'Poppins', sans-serif;
+}
+
+/* ==========================================================================
+   1. RÈGLES GÉNÉRALES
+   ========================================================================== */
 *, *::before, *::after {
     box-sizing: border-box;
 }
 
 html {
     overflow-x: hidden;
+    scroll-behavior: smooth;
 }
 
 body {
-    font-family: 'Arial', sans-serif;
+    font-family: var(--police-texte);
     margin: 0;
     padding: 0;
-    background-color: #f4f4f4; 
-    color: #333; 
-    line-height: 1.6;
+    color: var(--texte);
+    line-height: 1.7;
     text-align: center;
-    overflow-wrap: anywhere;
+    overflow-wrap: break-word;
+
+    /* Dégradé sombre animé, subtil et vivant */
+    background: linear-gradient(135deg,
+        var(--bg-0) 0%,
+        var(--bg-1) 30%,
+        var(--bg-2) 55%,
+        var(--bg-1) 80%,
+        var(--bg-0) 100%);
+    background-size: 300% 300%;
+    animation: fond-mouvant 26s ease-in-out infinite;
 }
 
-/* 2. EN-TÊTE ET TITRE */
+@keyframes fond-mouvant {
+    0%   { background-position: 0% 50%; }
+    50%  { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+}
+
+::selection {
+    background: var(--accent);
+    color: #fff;
+}
+
+::-webkit-scrollbar { width: 10px; }
+::-webkit-scrollbar-track { background: var(--bg-0); }
+::-webkit-scrollbar-thumb { background: #1e2a44; border-radius: 10px; }
+::-webkit-scrollbar-thumb:hover { background: var(--accent); }
+
+a {
+    transition: color 0.3s ease, background 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+a:focus-visible, button:focus-visible {
+    outline: 2px solid var(--accent-2);
+    outline-offset: 3px;
+    border-radius: 6px;
+}
+
+/* ==========================================================================
+   2. EN-TÊTE ET TITRE
+   ========================================================================== */
 header {
-    background-color: #2c3e50; 
-    color: white;
-    padding: 20px 0;
-    border-bottom: 5px solid #3498db; 
+    padding: 16px 20px;
+    background: rgba(7, 11, 20, 0.6);
+    backdrop-filter: blur(14px);
+    -webkit-backdrop-filter: blur(14px);
+    border-bottom: 1px solid var(--bordure);
 }
 
 h1 {
     margin: 0;
+    font-family: var(--police-titres);
     text-transform: uppercase;
-    letter-spacing: 2px;
+    letter-spacing: 3px;
+    font-weight: 800;
     padding: 0 16px;
+    color: var(--texte-titre);
 }
 
-/*   3. MENU DE NAVIGATION */
+/* Titre en dégradé (avec repli couleur unie si non supporté) */
+@supports ((-webkit-background-clip: text) or (background-clip: text)) {
+    h1 {
+        background-image: linear-gradient(90deg, #ffffff 0%, #bcd6ff 45%, var(--accent-2) 100%);
+        -webkit-background-clip: text;
+        background-clip: text;
+        -webkit-text-fill-color: transparent;
+        color: transparent;
+    }
+}
+
+/* ==========================================================================
+   3. MENU DE NAVIGATION
+   ========================================================================== */
 nav ul {
-    list-style-type: none; 
+    list-style-type: none;
     padding: 0;
-    margin: 20px 16px 0;
-    display: flex; 
+    margin: 18px 16px 0;
+    display: flex;
     justify-content: center;
     flex-wrap: wrap;
-    gap: 30px;
+    gap: 10px;
 }
 
 nav a {
-    color: white;
+    color: var(--texte-fonce);
     text-decoration: none;
-    font-weight: bold;
-    font-size: 18px;
-    padding: 5px 15px;
-    transition: all 0.3s ease-in-out;
+    font-weight: 600;
+    font-size: 16px;
+    padding: 9px 18px;
+    border-radius: 999px;
+    border: 1px solid transparent;
 }
 
-a {
-    transition: all 0.3s ease-in-out;
+nav a:hover {
+    color: var(--texte-titre);
+    background: var(--surface-hover);
+    border-color: var(--bordure);
+    transform: translateY(-2px);
 }
 
-/* Effet au survol */
-nav a:hover, .onglet-actif {
-    background-color: #3498db;
-    border-radius: 5px;
+.onglet-actif {
+    color: #fff !important;
+    background: linear-gradient(135deg, var(--accent), var(--accent-2)) !important;
+    border-color: transparent !important;
+    box-shadow: 0 8px 20px -6px var(--accent-glow);
 }
 
-/* 4. STRUCTURE PRINCIPALE */
+/* ==========================================================================
+   4. STRUCTURE PRINCIPALE
+   ========================================================================== */
 article {
-    background-color: white;
+    position: relative;
+    background: var(--surface);
+    backdrop-filter: blur(18px);
+    -webkit-backdrop-filter: blur(18px);
+    border: 1px solid var(--bordure);
     width: calc(100% - 32px);
-    max-width: 800px;
-    margin: 40px auto; 
-    padding: 40px;
-    border-radius: 10px; 
-    box-shadow: 0 0 10px rgba(0,0,0,0.1); 
+    max-width: 820px;
+    margin: 48px auto;
+    padding: 44px 40px;
+    border-radius: var(--rayon);
+    box-shadow: var(--ombre);
+    animation: apparition 0.6s ease-out both;
 }
 
+@keyframes apparition {
+    from { opacity: 0; transform: translateY(18px); }
+    to   { opacity: 1; transform: translateY(0); }
+}
 
-.bloc-contenu h3, .bloc-competence h3 {
-    color: #2c3e50;
-    border-left: 4px solid #3498db; /* Petite barre bleue décorative */
-    padding-left: 10px;
+h2 {
+    font-family: var(--police-titres);
+    font-weight: 800;
+    font-size: 32px;
+    color: var(--texte-titre);
+    letter-spacing: 0.4px;
+    margin: 0 0 12px;
+}
+
+h3 {
+    font-family: var(--police-titres);
+    font-weight: 700;
+    color: var(--texte-titre);
+}
+
+.titre-section {
+    margin-bottom: 28px;
+}
+
+.titre-section p {
+    color: var(--texte-fonce);
+    margin: 6px 0 0;
+}
+
+.titre-section h2 {
+    display: inline-block;
+    position: relative;
+    padding-bottom: 12px;
+}
+
+.titre-section h2::after {
+    content: "";
+    position: absolute;
+    left: 50%;
+    bottom: 0;
+    transform: translateX(-50%);
+    width: 64px;
+    height: 3px;
+    border-radius: 3px;
+    background: linear-gradient(90deg, var(--accent), var(--accent-2));
+}
+
+/* ---- Cartes internes (blocs de contenu, compétences, projets, contact) ---- */
+.bloc-contenu,
+.bloc-competence {
     text-align: left;
+    margin-bottom: 24px;
+    padding: 24px;
+    background: var(--surface);
+    border: 1px solid var(--bordure);
+    border-radius: var(--rayon);
+    transition: transform 0.3s ease, border-color 0.3s ease, background 0.3s ease;
 }
 
-/*5. PAGE ACCUEIL & QUI SUIS-JE*/
+.bloc-contenu:hover,
+.bloc-competence:hover {
+    transform: translateY(-4px);
+    border-color: rgba(59, 130, 246, 0.35);
+    background: var(--surface-hover);
+}
+
+.bloc-contenu h3,
+.bloc-competence h3 {
+    color: var(--texte-titre);
+    border-left: 4px solid var(--accent);
+    padding-left: 14px;
+    text-align: left;
+    margin: 0 0 14px;
+}
+
+/* ==========================================================================
+   5. PAGE ACCUEIL & QUI SUIS-JE
+   ========================================================================== */
 .photodemoi {
     display: block;
-    margin: 0 auto 20px auto; 
+    margin: 0 auto 24px;
     width: 200px;
     height: 200px;
-    object-fit: cover; 
-    object-position: top center; 
-    border-radius: 50%; 
-    border: 5px solid #2c3e50;
+    object-fit: cover;
+    object-position: top center;
+    border-radius: 50%;
+    border: 4px solid transparent;
+    background:
+        linear-gradient(var(--bg-0), var(--bg-0)) padding-box,
+        linear-gradient(135deg, var(--accent), var(--accent-2)) border-box;
+    box-shadow: 0 0 0 6px rgba(59, 130, 246, 0.12), 0 22px 44px -18px rgba(59, 130, 246, 0.55);
 }
 
-/* Citation  */
 .citation {
     font-style: italic;
-    color: #555;
+    color: var(--texte-fonce);
     font-size: 20px;
     margin-bottom: 30px;
-    border-left: 4px solid #3498db;
+    border-left: 4px solid var(--accent-2);
     display: inline-block;
-    padding-left: 10px;
+    padding: 8px 0 8px 16px;
     max-width: 100%;
+    text-align: left;
 }
 
 .presentation-bloc span {
@@ -112,106 +286,167 @@ article {
 }
 
 .ligne-bonjour {
-    font-weight: bold;
-    font-size: 24px;
-    color: #2c3e50;
+    font-family: var(--police-titres);
+    font-weight: 800;
+    font-size: 15px;
+    letter-spacing: 6px;
+    color: var(--accent-2);
     text-transform: uppercase;
-    margin: 20px 0;
+    margin: 20px 0 8px;
+}
+
+.ligne-intro {
+    color: var(--texte-fonce);
+    font-size: 17px;
+    margin-top: 12px;
 }
 
 .ligne-nom {
-    font-size: 28px;
-    font-weight: bold;
-    color: #3498db;
-    margin-bottom: 15px;
+    font-family: var(--police-titres);
+    font-size: 42px;
+    font-weight: 800;
+    color: var(--texte-titre);
+    letter-spacing: 1px;
+    line-height: 1.15;
+    margin: 6px 0 14px;
 }
 
 .ligne-statut {
-    font-style: italic;
-    font-size: 18px;
-    color: #333;
-    margin-top: 5px;
+    font-family: var(--police-titres);
+    font-size: 22px;
+    font-weight: 500;
+    color: var(--texte);
+    margin-top: 6px;
+    min-height: 1.6em; /* réserve la hauteur pour éviter les sauts de mise en page */
+}
+
+#texte-machine {
+    color: var(--accent-2);
+    font-weight: 600;
+}
+
+/* Curseur clignotant de la machine à écrire */
+.curseur {
+    display: inline-block;
+    width: 3px;
+    height: 1.1em;
+    margin-left: 4px;
+    vertical-align: text-bottom;
+    background: var(--accent-2);
+    border-radius: 2px;
+    box-shadow: 0 0 8px var(--accent-2);
+    animation: clignote 0.85s steps(1, end) infinite;
+}
+
+@keyframes clignote {
+    0%, 100% { opacity: 1; }
+    50%      { opacity: 0; }
 }
 
 .description-site {
     margin-top: 30px;
-    padding-top: 20px;
-    border-top: 1px solid #eee; 
+    padding-top: 22px;
+    border-top: 1px solid var(--bordure);
+    color: var(--texte-fonce);
 }
 
 .conteneur-badges {
     display: flex;
-    justify-content: space-around;
+    justify-content: center;
     flex-wrap: wrap;
-    gap: 15px;
+    gap: 12px;
     margin-top: 20px;
 }
 
 .badge-qualite {
-    background-color: #3498db;
-    color: white;
-    padding: 8px 15px;
-    border-radius: 20px; 
-    font-weight: bold;
+    background: rgba(59, 130, 246, 0.12);
+    color: var(--accent-2);
+    border: 1px solid rgba(59, 130, 246, 0.3);
+    padding: 8px 18px;
+    border-radius: 999px;
+    font-weight: 600;
     font-size: 14px;
-    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    transition: all 0.3s ease;
 }
 
-/* 6. PAGE PROJETS & COMPÉTENCES
-*/
+.badge-qualite:hover {
+    background: var(--accent);
+    color: #fff;
+    border-color: transparent;
+    transform: translateY(-2px);
+    box-shadow: 0 10px 20px -8px var(--accent-glow);
+}
+
+/* ==========================================================================
+   6. PAGE PROJETS & COMPÉTENCES
+   ========================================================================== */
 .carte-projet {
-    background-color: #f9f9f9;
-    border-left: 5px solid #3498db;
-    padding: 20px;
+    background: var(--surface);
+    border: 1px solid var(--bordure);
+    border-left: 4px solid var(--accent);
+    padding: 24px;
     text-align: left;
-    margin-bottom: 30px;
+    margin-bottom: 24px;
+    border-radius: var(--rayon);
     overflow-wrap: anywhere;
+    transition: transform 0.3s ease, border-color 0.3s ease, background 0.3s ease;
+}
+
+.carte-projet:hover {
+    transform: translateY(-4px);
+    border-color: rgba(59, 130, 246, 0.35);
+    border-left-color: var(--accent-2);
+    background: var(--surface-hover);
 }
 
 .carte-projet h3 {
     margin-top: 0;
-    color: #3498db;
-}
-
-.bloc-competence {
-    text-align: left;
-    margin-bottom: 30px;
+    color: var(--accent-2);
 }
 
 .lien-detail {
-    color: #3498db;
+    color: var(--accent-2);
     font-size: 0.9em;
     text-decoration: none;
     margin-left: 5px;
 }
-.lien-detail:hover { text-decoration: underline; }
 
-/*  7. PAGE TRACKER SOLAIRE (Technique) */
+.lien-detail:hover {
+    text-decoration: underline;
+    text-underline-offset: 3px;
+}
 
+/* ==========================================================================
+   7. PAGE TRACKER SOLAIRE (Technique)
+   ========================================================================== */
 .lien-retour {
     text-decoration: none;
-    color: #555;
-    font-weight: bold;
+    color: var(--texte-fonce);
+    font-weight: 600;
     display: inline-block;
     margin-bottom: 20px;
 }
-.lien-retour:hover { color: #3498db; }
+
+.lien-retour:hover {
+    color: var(--accent-2);
+    transform: translateX(-4px);
+}
+
 .media-video {
     width: 100%;
     max-width: 600px;
-    border-radius: 10px;
-    border: 2px solid #2c3e50;
-    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+    border-radius: var(--rayon);
+    border: 1px solid var(--bordure);
+    box-shadow: var(--ombre);
 }
 
 .image-large {
     width: 100%;
-    border-radius: 5px;
+    border-radius: 12px;
     margin-top: 15px;
-    border: 1px solid #ddd;
+    border: 1px solid var(--bordure);
 }
 
-/* Code Arduino */
 .conteneur-code {
     display: flex;
     flex-wrap: wrap;
@@ -227,55 +462,77 @@ article {
 
 .image-code {
     width: 100%;
-    border-radius: 5px;
-    border: 1px solid #ddd;
+    border-radius: 12px;
+    border: 1px solid var(--bordure);
 }
 
 .bloc-code {
-    background: #2c3e50;
-    color: #ecf0f1;
-    padding: 15px;
-    border-radius: 5px;
+    background: #0a0f1c;
+    color: #d7e6ff;
+    border: 1px solid var(--bordure);
+    padding: 16px;
+    border-radius: 12px;
     overflow-x: auto;
     text-align: left;
-    font-family: monospace;
+    font-family: 'SF Mono', 'Fira Code', Consolas, monospace;
     font-size: 14px;
     white-space: pre-wrap;
     overflow-wrap: anywhere;
 }
 
-.liste-materiel, .liste-sysml {
+code {
+    background: rgba(59, 130, 246, 0.16);
+    color: var(--accent-2);
+    padding: 2px 7px;
+    border-radius: 6px;
+    font-family: 'SF Mono', Consolas, monospace;
+    font-size: 0.9em;
+}
+
+.liste-materiel,
+.liste-sysml {
     text-align: left;
     margin-top: 15px;
 }
 
-/* 8. CONTACT */
+/* ==========================================================================
+   8. CONTACT
+   ========================================================================== */
 .contact-centre {
     text-align: center;
 }
 
 .contact-item {
     display: flex;
+    flex-direction: column;
     align-items: center;
-    justify-content: center;
     gap: 12px;
-    flex-wrap: wrap;
-    margin-bottom: 30px;
+    margin-bottom: 20px;
+    padding: 24px;
+    background: var(--surface);
+    border: 1px solid var(--bordure);
+    border-radius: var(--rayon);
+    transition: transform 0.3s ease, border-color 0.3s ease, background 0.3s ease;
 }
 
+.contact-item:hover {
+    transform: translateY(-4px);
+    border-color: rgba(59, 130, 246, 0.35);
+    background: var(--surface-hover);
+}
 
 .titre-contact {
     border: none !important;
-    text-align: center !important; 
-    padding-left: 0 !important; 
-    color: #2c3e50;
+    text-align: center !important;
+    padding-left: 0 !important;
+    color: var(--texte-titre);
     margin: 0;
 }
 
 .lien-mail-gros {
     font-size: 20px;
-    font-weight: bold;
-    color: #3498db;
+    font-weight: 600;
+    color: var(--accent-2);
     text-decoration: none;
     overflow-wrap: anywhere;
 }
@@ -283,14 +540,12 @@ article {
 .lien-mail-gros:hover,
 .lien-reseau:hover,
 footer a:hover {
-    color: #2c3e50;
-    text-decoration: underline;
-    text-underline-offset: 4px;
+    color: #fff;
 }
 
 .lien-reseau {
     font-size: 18px;
-    color: #2c3e50;
+    color: var(--texte);
     text-decoration: none;
     display: flex;
     align-items: center;
@@ -298,61 +553,89 @@ footer a:hover {
     gap: 10px;
 }
 
+.lien-reseau:hover {
+    color: var(--accent-2);
+    transform: translateY(-2px);
+}
+
 .icone-reseau {
     width: 40px;
     vertical-align: middle;
-    transition: all 0.3s ease-in-out;
+    transition: transform 0.3s ease;
 }
 
 .lien-reseau:hover .icone-reseau,
 footer a:hover .icone-footer {
-    transform: scale(1.05);
+    transform: scale(1.1);
 }
 
 .separateur {
     border: 0;
-    border-top: 1px solid #eee;
+    border-top: 1px solid var(--bordure);
     margin: 30px 0;
 }
 
-/* 9. BOUTONS (Téléchargement & Projets)*/
-.bouton-telechargement, .bouton-projet {
+/* ==========================================================================
+   9. BOUTONS (Téléchargement & Projets)
+   ========================================================================== */
+.bouton-telechargement,
+.bouton-projet {
     display: inline-block;
-    background-color: #3498db;
-    color: white !important;
-    padding: 12px 25px;
-    border-radius: 30px;
+    background: linear-gradient(135deg, var(--accent), var(--accent-2));
+    color: #fff !important;
+    padding: 14px 30px;
+    border-radius: 999px;
     text-decoration: none;
-    font-weight: bold;
-    transition: all 0.3s ease-in-out;
+    font-weight: 700;
+    font-family: var(--police-titres);
+    letter-spacing: 0.3px;
+    box-shadow: 0 12px 28px -10px var(--accent-glow);
+    transition: transform 0.25s ease, box-shadow 0.25s ease, filter 0.25s ease;
     margin-top: 10px;
 }
 
-.bouton-telechargement:hover, .bouton-projet:hover {
-    background-color: #2c3e50;
-    transform: scale(1.05); /*   zoom */
+.bouton-telechargement:hover,
+.bouton-projet:hover {
+    transform: translateY(-3px) scale(1.03);
+    box-shadow: 0 20px 40px -12px rgba(59, 130, 246, 0.7);
+    filter: brightness(1.08);
 }
 
-.zone-cv, .zone-bouton-projet {
+.bouton-telechargement:active,
+.bouton-projet:active {
+    transform: translateY(0) scale(0.98);
+}
+
+.zone-cv,
+.zone-bouton-projet {
     margin-top: 40px;
-    padding-top: 20px;
-    border-top: 1px solid #eee;
+    padding-top: 24px;
+    border-top: 1px solid var(--bordure);
 }
 
-/* 10. PIED DE PAGE (FOOTER) */
+.texte-cv {
+    color: var(--texte-fonce);
+}
+
+/* ==========================================================================
+   10. PIED DE PAGE (FOOTER)
+   ========================================================================== */
 footer {
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    background-color: #333;
-    color: white;
-    padding: 30px 0;
-    margin-top: 50px;
+    background: rgba(7, 11, 20, 0.7);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    border-top: 1px solid var(--bordure);
+    color: var(--texte-fonce);
+    padding: 34px 0;
+    margin-top: 60px;
 }
 
 footer a {
-    color: #3498db;
+    color: var(--accent-2);
     text-decoration: none;
     margin: 0 15px;
     font-size: 16px;
@@ -360,41 +643,55 @@ footer a {
     overflow-wrap: anywhere;
 }
 
+footer a:hover {
+    color: #fff;
+    text-decoration: underline;
+    text-underline-offset: 4px;
+}
+
 .icone-footer {
     width: 30px;
     vertical-align: middle;
-    transition: all 0.3s ease-in-out;
+    transition: transform 0.3s ease;
 }
 
-/* Règles pour les téléphones (écrans de moins de 768px de large) */
+/* ==========================================================================
+   Classes utilitaires
+   ========================================================================== */
+.bloc-centre { text-align: center; }
+.texte-gras { font-weight: 600; color: var(--texte-titre); }
+
+/* ==========================================================================
+   11. RESPONSIVE — téléphones (écrans < 768px)
+   ========================================================================== */
 @media (max-width: 768px) {
     header {
-        padding: 16px 0;
+        padding: 14px 0;
     }
 
     h1 {
-        font-size: 24px;
-        line-height: 1.25;
+        font-size: 22px;
+        letter-spacing: 2px;
     }
 
     nav ul {
         flex-direction: column;
         align-items: stretch;
-        gap: 4px;
-        margin-top: 16px;
+        gap: 6px;
+        margin-top: 14px;
     }
 
     nav a {
         display: block;
-        font-size: 16px;
-        padding: 8px 10px;
+        font-size: 15px;
+        padding: 10px 12px;
     }
 
     article {
         width: calc(100% - 24px);
-        margin: 24px auto;
-        padding: 24px 16px;
-        border-radius: 8px;
+        margin: 28px auto;
+        padding: 26px 18px;
+        border-radius: 16px;
         text-align: left;
     }
 
@@ -408,7 +705,7 @@ footer a {
     }
 
     h2 {
-        font-size: 24px;
+        font-size: 26px;
         line-height: 1.3;
     }
 
@@ -431,15 +728,16 @@ footer a {
     }
 
     .ligne-bonjour {
-        font-size: 21px;
+        font-size: 13px;
+        letter-spacing: 4px;
     }
 
     .ligne-nom {
-        font-size: 25px;
+        font-size: 32px;
     }
 
     .ligne-statut {
-        font-size: 16px;
+        font-size: 19px;
     }
 
     .conteneur-badges {
@@ -451,7 +749,7 @@ footer a {
     }
 
     .carte-projet {
-        padding: 16px;
+        padding: 18px;
     }
 
     .media-video,
@@ -497,11 +795,11 @@ footer a {
     .bouton-telechargement,
     .bouton-projet {
         max-width: 100%;
-        padding: 11px 16px;
+        padding: 12px 20px;
     }
 
     footer {
-        padding: 24px 16px;
+        padding: 26px 16px;
     }
 
     footer a {
@@ -510,17 +808,39 @@ footer a {
     }
 }
 
-
-.bloc-centre { text-align: center; }
-.texte-gras { font-weight: bold; }
-
-@media print {
-    
-    nav, footer, header { display: none; }
-    body, article { 
-        background-color: white !important; 
-        box-shadow: none !important; 
-        width: 100% !important; 
-        color: black !important; 
+/* En-tête "collant" uniquement sur grand écran
+   (sur mobile, le menu empilé prendrait trop de place) */
+@media (min-width: 769px) {
+    header {
+        position: sticky;
+        top: 0;
+        z-index: 50;
     }
+}
+
+/* ==========================================================================
+   12. ACCESSIBILITÉ — mouvement réduit
+   ========================================================================== */
+@media (prefers-reduced-motion: reduce) {
+    *, *::before, *::after {
+        animation-duration: 0.001ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.001ms !important;
+    }
+    body { animation: none; }
+    html { scroll-behavior: auto; }
+}
+
+/* ==========================================================================
+   13. IMPRESSION
+   ========================================================================== */
+@media print {
+    nav, footer, header { display: none; }
+    body, article {
+        background: white !important;
+        box-shadow: none !important;
+        width: 100% !important;
+        color: black !important;
+    }
+    body { animation: none; }
 }
