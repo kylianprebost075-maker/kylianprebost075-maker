@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Espace Admin — Portfolio de Kylian</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body class="page-connexion">
+
+    <main class="carte-connexion">
+        <div class="icone-verrou" aria-hidden="true">🔒</div>
+        <h2>Espace Admin</h2>
+        <p class="sous-titre-connexion">Accès réservé à l'administrateur du portfolio</p>
+
+        <form class="formulaire-connexion" action="#" method="post">
+            <div class="champ">
+                <label for="identifiant">Identifiant</label>
+                <input type="text" id="identifiant" name="identifiant"
+                       placeholder="Votre identifiant" required autocomplete="username">
+            </div>
+
+            <div class="champ">
+                <label for="motdepasse">Mot de passe</label>
+                <input type="password" id="motdepasse" name="motdepasse"
+                       placeholder="••••••••" required autocomplete="current-password">
+            </div>
+
+            <button type="submit" class="bouton-connexion">Se connecter</button>
+        </form>
+
+        <a href="index.html" class="lien-retour-connexion">← Retour au portfolio</a>
+    </main>
+
+</body>
+</html>

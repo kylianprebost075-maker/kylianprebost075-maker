@@ -844,3 +844,156 @@ footer a:hover {
     }
     body { animation: none; }
 }
+
+/* ==========================================================================
+   14. PAGE DE CONNEXION (Espace Admin)
+   ========================================================================== */
+.page-connexion {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    padding: 24px;
+}
+
+.carte-connexion {
+    width: 100%;
+    max-width: 400px;
+    padding: 44px 36px;
+    background: var(--surface);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    border: 1px solid var(--bordure);
+    border-radius: 28px;
+    box-shadow: 0 24px 60px -24px rgba(0, 0, 0, 0.75),
+                0 0 40px -12px rgba(59, 130, 246, 0.25);
+    animation: apparition 0.6s ease-out both;
+}
+
+.icone-verrou {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 68px;
+    height: 68px;
+    margin-bottom: 18px;
+    font-size: 30px;
+    border-radius: 50%;
+    background: linear-gradient(135deg, var(--accent), var(--accent-2));
+    box-shadow: 0 12px 28px -8px var(--accent-glow);
+}
+
+.carte-connexion h2 {
+    font-size: 28px;
+    margin: 0 0 6px;
+}
+
+.sous-titre-connexion {
+    color: var(--texte-fonce);
+    font-size: 15px;
+    margin: 0 0 28px;
+}
+
+.formulaire-connexion {
+    text-align: left;
+}
+
+.champ {
+    margin-bottom: 18px;
+}
+
+.champ label {
+    display: block;
+    font-weight: 600;
+    font-size: 14px;
+    color: var(--texte-fonce);
+    letter-spacing: 0.3px;
+    margin-bottom: 8px;
+}
+
+.champ input {
+    width: 100%;
+    padding: 14px 16px;
+    font-family: var(--police-texte);
+    font-size: 15px;
+    color: var(--texte);
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid var(--bordure);
+    border-radius: 14px;
+    outline: none;
+    transition: border-color 0.25s ease, box-shadow 0.25s ease, background 0.25s ease;
+}
+
+.champ input::placeholder {
+    color: rgba(169, 182, 202, 0.5);
+}
+
+.champ input:focus {
+    border-color: var(--accent);
+    background: rgba(255, 255, 255, 0.07);
+    box-shadow: 0 0 0 4px rgba(59, 130, 246, 0.18);
+}
+
+.bouton-connexion {
+    width: 100%;
+    padding: 15px 20px;
+    margin-top: 6px;
+    font-family: var(--police-titres);
+    font-size: 16px;
+    font-weight: 700;
+    letter-spacing: 0.4px;
+    color: #fff;
+    background: linear-gradient(135deg, var(--accent), var(--accent-2));
+    border: none;
+    border-radius: 999px;
+    cursor: pointer;
+    box-shadow: 0 12px 28px -10px var(--accent-glow);
+    transition: transform 0.25s ease, box-shadow 0.25s ease, filter 0.25s ease;
+}
+
+.bouton-connexion:hover {
+    transform: translateY(-3px) scale(1.02);
+    box-shadow: 0 20px 40px -12px rgba(59, 130, 246, 0.7);
+    filter: brightness(1.08);
+}
+
+.bouton-connexion:active {
+    transform: translateY(0) scale(0.98);
+}
+
+.lien-retour-connexion {
+    display: inline-block;
+    margin-top: 24px;
+    color: var(--texte-fonce);
+    font-size: 14px;
+    text-decoration: none;
+}
+
+.lien-retour-connexion:hover {
+    color: var(--accent-2);
+    transform: translateX(-4px);
+}
+
+/* Lien discret "Espace Admin" dans le pied de page */
+.lien-admin {
+    margin-top: 12px;
+    font-size: 13px;
+    color: var(--texte-fonce);
+    opacity: 0.7;
+    letter-spacing: 0.3px;
+    text-decoration: none;
+}
+
+.lien-admin:hover {
+    color: var(--accent-2);
+    opacity: 1;
+    text-decoration: underline;
+    text-underline-offset: 4px;
+}
+
+@media (max-width: 768px) {
+    .carte-connexion {
+        padding: 34px 22px;
+        border-radius: 22px;
+    }
+}
