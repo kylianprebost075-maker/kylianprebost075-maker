@@ -35,49 +35,59 @@
 
         <div class="titre-section">
             <h2>Lanceur 308</h2>
-            <p>Application Android pour autoradio, projet personnel (version 0.31)</p>
+            <p>Un écran d'accueil pour l'autoradio de ma voiture</p>
         </div>
 
         <div class="bloc-contenu">
-            <h3>Le projet</h3>
+            <h3>Pourquoi ce projet</h3>
             <p>
-                Un écran d'accueil sur mesure pour l'autoradio Android (FYT) de ma Peugeot 308 de 2007 (1.6 HDi 110).
-                Il remplace le lanceur d'origine et affiche l'état réel de la voiture. Il est gratuit, sans compte et fonctionne sans Internet.
+                Ma Peugeot 308 de 2007 a un autoradio Android chinois (un FYT). L'écran d'accueil d'origine est moche
+                et n'affiche presque rien de la voiture, alors que l'autoradio reçoit pourtant plein d'informations
+                du bus CAN : portes, coffre, température dehors, tension de la batterie...
             </p>
             <p>
-                Il peut aussi s'adapter à une autre voiture grâce à un guide d'adaptation fourni avec le projet.
+                J'ai donc décidé de faire mon propre lanceur : une appli Android qui s'affiche au démarrage et qui
+                montre ma voiture, la vraie, avec sa couleur et sa plaque.
             </p>
         </div>
 
         <div class="bloc-contenu bloc-centre">
-            <h3>Sur le vrai autoradio</h3>
-            <p>La voiture en 3D, aux couleurs et à la plaque de mon véhicule, avec heure, température, batterie et autonomie.</p>
+            <h3>Ce que ça donne</h3>
+            <p>Les photos ci-dessous sont des captures prises directement sur l'autoradio. Quand j'ouvre une porte, elle s'ouvre aussi à l'écran.</p>
             <img src="../images/lanceur308/accueil-autoradio.png" alt="La 308 en 3D sur l'autoradio" class="image-large">
             <img src="../images/lanceur308/portes-ouvertes.png" alt="Portes, capot et coffre ouverts en 3D" class="image-large">
         </div>
 
         <div class="bloc-contenu">
-            <h3>Ce que fait l'application</h3>
-            <ul class="liste-materiel">
-                <li>Accueil : voiture en 3D, ouvrants animés d'après le boîtier CAN, bilan « Prêt à partir » (verglas, batterie, carburant, entretien)</li>
-                <li>Moteur (boîtier OBD) : puissance, couple, codes défaut, santé de la batterie, trajets, chrono, filtre à particules</li>
-                <li>Entretien : échéances, historique, pleins et consommation, carnet en PDF</li>
-                <li>Son : balance Seul / Passagers, alignement temporel, sons de test, volume selon la vitesse</li>
-                <li>Réglages : plaque, couleur, mode démo, sauvegarde sur clé USB, ADB par le Wi-Fi</li>
-            </ul>
+            <h3>Les onglets</h3>
+            <p>
+                À côté de l'accueil, j'ai ajouté les choses dont j'avais besoin au quotidien. Un onglet Moteur, qui lit
+                un petit boîtier OBD branché sous le volant (puissance, régime, codes défaut, état de la batterie).
+                Un onglet Entretien pour ne plus oublier la vidange et suivre ma consommation. Et un onglet Son pour
+                régler l'autoradio, parce que sur le siège conducteur on n'entend pas les enceintes de la même façon
+                que les passagers.
+            </p>
             <img src="../images/lanceur308/moteur.png" alt="Onglet Moteur : puissance, couple, régime" class="image-large">
             <img src="../images/lanceur308/entretien.png" alt="Onglet Entretien" class="image-large">
             <img src="../images/lanceur308/son.png" alt="Onglet Son : tests et polarité" class="image-large">
+            <p>
+                Ces trois captures viennent de l'émulateur Android sur mon PC, en mode démo avec des données
+                inventées. L'émulateur ne sait pas afficher la 3D, c'est pour ça que la voiture est vue de dessus.
+            </p>
         </div>
 
         <div class="bloc-contenu">
-            <h3>Démarche technique</h3>
-            <ul class="liste-sysml">
-                <li>Lecture du bus CAN de la voiture via l'autoradio, et exploration OBD en lecture seule.</li>
-                <li>Rendu 3D de la voiture (modèle Blender, moteur Filament / three.js).</li>
-                <li>Outils PC : séances par ADB Wi-Fi, réglage du son au micro, test des ceintures par le CAN.</li>
-                <li>Documentation complète, guide d'installation en 5 étapes et versionnement sur GitHub.</li>
-            </ul>
+            <h3>Ce qui a été compliqué</h3>
+            <p>
+                Le plus dur a été de comprendre ce que l'autoradio transmet vraiment. Il n'y a pas de documentation :
+                j'ai dû écouter ce qui passait sur le CAN et tester porte par porte. Certaines infos n'arrivent
+                tout simplement pas (les feux par exemple), donc l'appli allume les phares d'après l'heure du coucher
+                du soleil. Les ceintures, je suis encore en train de les tester.
+            </p>
+            <p>
+                J'ai aussi écrit quelques outils sur PC pour travailler plus vite : on se connecte à l'autoradio par
+                le Wi-Fi (ADB) au lieu de brancher un câble à chaque fois.
+            </p>
         </div>
 
         <div class="zone-bouton-projet">
