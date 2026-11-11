@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="UTF-8">
+    <title>Projet Lanceur 308 - Portfolio de Kylian</title>
+    <link rel="stylesheet" type="text/css" href="../css/style.css">
+        <!-- Google tag (gtag.js) -->
+        <script async src="https://www.googletagmanager.com/gtag/js?id=G-W06DZPCQ13"></script>
+        <script>
+            window.dataLayer = window.dataLayer || [];
+            function gtag(){dataLayer.push(arguments);}
+            gtag('js', new Date());
+
+            gtag('config', 'G-W06DZPCQ13');
+        </script>
+</head>
+<body>
+
+    <header>
+        <div><h1>PREBOST KYLIAN</h1></div>
+        <nav>
+            <ul>
+                <li><a id="accueil" href="../index.html">Accueil</a></li>
+                <li><a id="info" href="quisuisje.html">Qui suis-je?</a></li>
+                <li><a id="projets" class="onglet-actif" href="projets.html">Projets</a></li>
+                <li><a id="competences" href="competences.html">Compétences</a></li>
+                <li><a id="contact" href="contacter.html">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <article>
+        <a href="projets.html" class="lien-retour">⬅ Retour aux projets</a>
+
+        <div class="titre-section">
+            <h2>Lanceur 308</h2>
+            <p>Application Android pour autoradio, projet personnel (version 0.31)</p>
+        </div>
+
+        <div class="bloc-contenu">
+            <h3>Le projet</h3>
+            <p>
+                Un écran d'accueil sur mesure pour l'autoradio Android (FYT) de ma Peugeot 308 de 2007 (1.6 HDi 110).
+                Il remplace le lanceur d'origine et affiche l'état réel de la voiture. Il est gratuit, sans compte et fonctionne sans Internet.
+            </p>
+            <p>
+                Il peut aussi s'adapter à une autre voiture grâce à un guide d'adaptation fourni avec le projet.
+            </p>
+        </div>
+
+        <div class="bloc-contenu bloc-centre">
+            <h3>Sur le vrai autoradio</h3>
+            <p>La voiture en 3D, aux couleurs et à la plaque de mon véhicule, avec heure, température, batterie et autonomie.</p>
+            <img src="../images/lanceur308/accueil-autoradio.png" alt="La 308 en 3D sur l'autoradio" class="image-large">
+            <img src="../images/lanceur308/portes-ouvertes.png" alt="Portes, capot et coffre ouverts en 3D" class="image-large">
+        </div>
+
+        <div class="bloc-contenu">
+            <h3>Ce que fait l'application</h3>
+            <ul class="liste-materiel">
+                <li>Accueil : voiture en 3D, ouvrants animés d'après le boîtier CAN, bilan « Prêt à partir » (verglas, batterie, carburant, entretien)</li>
+                <li>Moteur (boîtier OBD) : puissance, couple, codes défaut, santé de la batterie, trajets, chrono, filtre à particules</li>
+                <li>Entretien : échéances, historique, pleins et consommation, carnet en PDF</li>
+                <li>Son : balance Seul / Passagers, alignement temporel, sons de test, volume selon la vitesse</li>
+                <li>Réglages : plaque, couleur, mode démo, sauvegarde sur clé USB, ADB par le Wi-Fi</li>
+            </ul>
+            <img src="../images/lanceur308/moteur.png" alt="Onglet Moteur : puissance, couple, régime" class="image-large">
+            <img src="../images/lanceur308/entretien.png" alt="Onglet Entretien" class="image-large">
+            <img src="../images/lanceur308/son.png" alt="Onglet Son : tests et polarité" class="image-large">
+        </div>
+
+        <div class="bloc-contenu">
+            <h3>Démarche technique</h3>
+            <ul class="liste-sysml">
+                <li>Lecture du bus CAN de la voiture via l'autoradio, et exploration OBD en lecture seule.</li>
+                <li>Rendu 3D de la voiture (modèle Blender, moteur Filament / three.js).</li>
+                <li>Outils PC : séances par ADB Wi-Fi, réglage du son au micro, test des ceintures par le CAN.</li>
+                <li>Documentation complète, guide d'installation en 5 étapes et versionnement sur GitHub.</li>
+            </ul>
+        </div>
+
+        <div class="zone-bouton-projet">
+            <a href="https://github.com/kylianprebost075-maker/lanceur-308" class="bouton-projet" target="_blank">
+                Voir le code sur GitHub
+            </a>
+        </div>
+
+    </article>
+
+    <footer>
+        <span>Me contacter : </span>
+        <a href="mailto:kylianprebost075@gmail.com">kylianprebost075@gmail.com</a>
+        <a href="https://www.linkedin.com/in/kylian-prebost-32213239b/" target="_blank">
+            <img src="../images/linkedin2.png" alt="Logo LinkedIn" class="icone-footer">
+        </a>
+    </footer>
+
+    <script src="../js/navigation.js"></script>
+</body>
+</html>
